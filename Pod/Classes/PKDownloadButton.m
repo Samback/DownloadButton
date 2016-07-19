@@ -98,15 +98,15 @@ static PKDownloadButton *CommonInit(PKDownloadButton *self) {
 - (void)tintColorDidChange {
 	[super tintColorDidChange];
 	
-	[self updateButton:self.startDownloadButton title:@"DOWNLOAD"];
-	[self updateButton:self.downloadedButton title:@"REMOVE"];
+	[self updateButton:self.startDownloadButton title:@"BUY"];
+	[self updateButton:self.downloadedButton title:@"DELETE"];
 }
 
 
 #pragma mark - appearance
 
 - (void)updateButton:(UIButton *)button title:(NSString *)title {
-	NSAttributedString *attrTitle = [[NSAttributedString alloc] initWithString:title attributes:DefaultTitleAttributes(self.tintColor)];
+	NSAttributedString *attrTitle = [[NSAttributedString alloc] initWithString:title attributes:DefaultTitleAttributes([UIColor whiteColor])];
 	[button setAttributedTitle:attrTitle forState:UIControlStateNormal];
 	NSAttributedString *highlitedTitle = [[NSAttributedString alloc] initWithString:title attributes:HighlitedTitleAttributes()];
 	[button setAttributedTitle:highlitedTitle forState:UIControlStateHighlighted];
@@ -118,7 +118,7 @@ static PKDownloadButton *CommonInit(PKDownloadButton *self) {
     PKBorderedButton *startDownloadButton = [PKBorderedButton buttonWithType:UIButtonTypeCustom];
     [startDownloadButton configureDefaultAppearance];
     
-	[self updateButton:startDownloadButton title:@"DOWNLOAD"];
+	[self updateButton:startDownloadButton title:@"BUY"];
 	
     [startDownloadButton addTarget:self
                             action:@selector(currentButtonTapped:)
@@ -137,7 +137,7 @@ static PKDownloadButton *CommonInit(PKDownloadButton *self) {
     PKBorderedButton *downloadedButton = [PKBorderedButton buttonWithType:UIButtonTypeCustom];
     [downloadedButton configureDefaultAppearance];
 
-	[self updateButton:downloadedButton title:@"REMOVE"];
+	[self updateButton:downloadedButton title:@"DELETE"];
     
     [downloadedButton addTarget:self
                          action:@selector(currentButtonTapped:)
