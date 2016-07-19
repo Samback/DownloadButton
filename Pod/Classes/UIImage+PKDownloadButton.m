@@ -35,11 +35,10 @@
     UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(2.f, 2.f, 26.f, 26.f)
                                                           cornerRadius:4.f];
     CGContextSetStrokeColorWithColor(context, color.CGColor);
-    bezierPath.lineWidth = 1.f;
-    [bezierPath stroke];
+
     
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    
+    [color setFill];
     UIGraphicsEndImageContext();
     return [image resizableImageWithCapInsets:UIEdgeInsetsMake(10.f, 10.f, 10.f, 10.f)];
 }
