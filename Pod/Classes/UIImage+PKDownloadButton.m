@@ -39,6 +39,8 @@
     
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     [color setFill];
+    [bezierPath setFill];
+    
     UIGraphicsEndImageContext();
     return [image resizableImageWithCapInsets:UIEdgeInsetsMake(10.f, 10.f, 10.f, 10.f)];
 }
