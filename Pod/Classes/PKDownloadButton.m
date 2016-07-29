@@ -95,12 +95,12 @@ static PKDownloadButton *CommonInit(PKDownloadButton *self) {
     return CommonInit([super initWithFrame:frame]);
 }
 
-- (void)tintColorDidChange {
-	[super tintColorDidChange];
-	
-	[self updateButton:self.startDownloadButton title:@"BUY"];
-	[self updateButton:self.downloadedButton title:@"DELETE"];
-}
+//- (void)tintColorDidChange {
+//	[super tintColorDidChange];
+//	
+//	[self updateButton:self.startDownloadButton title:@"BUY"];
+//	[self updateButton:self.downloadedButton title:@"DELETE"];
+//}
 
 
 #pragma mark - appearance
